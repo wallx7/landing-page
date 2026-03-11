@@ -1,90 +1,90 @@
-# Weven — Landing Page (AI Sales)
+# Weven — Landing Page
 
-Landing page estática com animações e layout responsivo para divulgar um app de gestão de inventário com IA. O projeto utiliza HTML, Tailwind CSS (com prefixo de classes), animações com GSAP e carrossel com Swiper.
+Landing page estática e responsiva para divulgar o app de gestão de inventário com IA da Weven. O projeto usa HTML, Tailwind CSS com prefixo `tw-`, GSAP (animações) e Swiper (carrossel).
 
-## Visão Geral
+## Recursos
 
-- Conteúdo focado em apresentar benefícios do produto, com seções de destaque, prova social e CTA.
-- Estilos com Tailwind CSS usando prefixo `tw-` para evitar conflitos.
-- Animações de entrada e ao rolar usando GSAP e ScrollTrigger.
-- Ícones via Bootstrap Icons e Google Material Icons CDN.
+- Layout responsivo com Tailwind CSS (prefixo `tw-`).
+- Animações de entrada e ao rolar com GSAP + ScrollTrigger.
+- Seções de Hero, Prova Social, Benefícios, Dicas e CTA.
+- Ícones via Bootstrap Icons e Google Material Icons (CDN).
 
-## Estrutura de Pastas
+## Estrutura
 
-- Raiz do repositório: metadados do projeto.
-- Código-fonte da landing: pasta `landWEVEN/`
-  - HTML/CSS/JS e assets ficam dentro de `landWEVEN`.
-  - Arquivos principais:
-    - `landWEVEN/index.html`
-    - `landWEVEN/css/` (inclui `tailwind.css`, `tailwind-build.css` e `index.css`)
-    - `landWEVEN/index.js`
-    - `landWEVEN/assets/` (imagens e ícones)
+```
+landWEVEN/
+├─ assets/            # imagens e ícones
+├─ css/
+│  ├─ tailwind.css    # fonte do Tailwind
+│  ├─ tailwind-build.css
+│  └─ index.css       # estilos adicionais
+├─ index.html         # página principal
+├─ index.js           # scripts (animações, menu, etc.)
+└─ tailwind.config.js # configurações do Tailwind
+```
 
-## Como Rodar Localmente
+## Requisitos
 
-1) Requisitos
-- Node.js LTS e npm instalados.
+- Node.js LTS e npm.
 
-2) Instalar dependências (na pasta da landing)
-- Abra o terminal na raiz do repositório e execute:
-  - `cd landWEVEN`
-  - `npm install`
+## Instalação
 
-3) Desenvolvimento (Tailwind em modo watch)
-- Ainda em `landWEVEN`, rode:
+1. Entre na pasta do projeto:
+   - `cd landWEVEN`
+2. Instale as dependências:
+   - `npm install`
+
+## Desenvolvimento
+
+- Inicie o Tailwind em modo watch:
   - `npm run start:tailwind`
-- Abra o arquivo `index.html` no navegador (idealmente com uma extensão tipo Live Server).
+- Abra `landWEVEN/index.html` no navegador (recomendado usar uma extensão tipo Live Server).
 
-4) Build de produção (CSS minificado)
-- Em `landWEVEN`, rode:
+## Build de Produção
+
+- Gere o CSS minificado:
   - `npm run build:tailwind`
-- O HTML utiliza o arquivo gerado `css/tailwind-build.css`.
-
-Scripts disponíveis em [package.json](file:///c:/Users/willi/OneDrive/Documentos/landing-page/landWEVEN/package.json#L6-L9).
+- O HTML referencia `css/tailwind-build.css`.
 
 ## SEO e Metadados
 
-- Ajuste o título e a descrição na head do HTML.
-- Atualize as tags Open Graph para compartilhamento:
-  - Arquivo: [index.html](file:///c:/Users/willi/OneDrive/Documentos/landing-page/landWEVEN/index.html#L14-L21)
-  - Campos: `og:title`, `og:description`, `og:type`, `og:url` e `og:image`.
-- Favicon: `./assets/logo.png` dentro da pasta `landWEVEN/assets/`.
+- Título/descrição ajustados para português.
+- Open Graph configurado (title/description/url/image) em `landWEVEN/index.html`.
+- Favicon: `landWEVEN/assets/logo.png`.
+
+## Publicação no GitHub Pages
+
+Opção 1 — Publicar a pasta `docs/`:
+1. Crie `docs/` na raiz do repositório.
+2. Copie o conteúdo de `landWEVEN/` para `docs/`.
+3. Em Settings → Pages → Build and deployment:
+   - Deploy from a branch
+   - Branch: `main` | Folder: `/docs`
+
+Opção 2 — Publicar na raiz:
+1. Mova o conteúdo de `landWEVEN/` para a raiz do repositório.
+2. Em Settings → Pages → Build and deployment:
+   - Deploy from a branch
+   - Branch: `main` | Folder: `/ (root)`
 
 ## Personalização de Tema
 
-- As cores principais estão definidas no Tailwind:
-  - [tailwind.config.js](file:///c:/Users/willi/OneDrive/Documentos/landing-page/landWEVEN/tailwind.config.js#L12-L15)
-  - `primary: #BFFE66`, `secondary: #BDB8FF`
-- Todas as classes Tailwind usam o prefixo `tw-` (ex.: `tw-flex`, `tw-text-4xl`).
+- Cores principais em `tailwind.config.js`:
+  - `primary: #BFFE66`
+  - `secondary: #BDB8FF`
+- Todas as classes Tailwind usam prefixo `tw-` (ex.: `tw-flex`, `tw-text-4xl`).
 
-## Acessibilidade e Boas Práticas
+## Boas Práticas de Acessibilidade
 
-- Use textos alternativos nas imagens (`alt`).
-- Garanta contraste adequado entre texto e fundo.
-- Mantenha os CTAs com rótulos claros e atributos `aria-label` quando necessário.
+- Forneça `alt` descritivo nas imagens.
+- Garanta contraste adequado de cores.
+- Use `aria-label` nos botões/links quando necessário.
 
-## Deploy no GitHub Pages
+## Scripts
 
-Você tem duas opções:
-
-- Opção A (recomendada): publicar os arquivos da pasta `landWEVEN` na raiz do repositório antes do deploy.
-  - Copie o conteúdo de `landWEVEN/` para a raiz (ou ajuste a raiz do site para essa pasta).
-  - Faça o build (`npm run build:tailwind`) e confirme que `css/tailwind-build.css` está referenciado no HTML.
-  - Faça push para o GitHub e ative o Pages na aba “Settings” → “Pages”.
-
-- Opção B: manter o código dentro de `landWEVEN` e publicar essa pasta.
-  - Configure o Pages para publicar a partir de uma pasta específica (por exemplo, via GitHub Actions).
-  - Alternativamente, crie uma pasta `docs/` na raiz e copie o conteúdo de `landWEVEN` para `docs/` (o Pages aceita publicar `/docs`).
-
-## Tecnologias
-
-- HTML5, CSS3 (Tailwind CSS 3.x)
-- JavaScript (ES6+)
-- GSAP + ScrollTrigger (via CDN)
-- Swiper (via CDN)
-- Bootstrap Icons, Google Material Icons (via CDN)
+- `npm run start:tailwind` — watch do Tailwind (dev)
+- `npm run build:tailwind` — build minificado (prod)
 
 ## Licença
 
-- Licença: MIT (conforme `package.json`).
-- Animações com GSAP — verifique as condições de uso da biblioteca.
+MIT. Ver `package.json`.
