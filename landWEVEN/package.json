@@ -1,11 +1,11 @@
 {
     "name": "landing-pages",
     "version": "1.0.0",
-    "description": "beautiful landing pages",
+    "description": "weven site",
     "main": "index.js",
     "scripts": {
-      "start:tailwind": "cross-env NODE_ENV=development tailwindcss --postcss -i tailwind.css -o tailwind-runtime.css -w",
-      "build:tailwind": "cross-env NODE_ENV=production tailwindcss --postcss -i tailwind.css -o tailwind-build.css --minify",
+      "start:tailwind": "tailwindcss -i css/tailwind.css -o css/tailwind-build.css -w",
+      "build:tailwind": "tailwindcss -i css/tailwind.css -o css/tailwind-build.css --minify",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
@@ -15,7 +15,7 @@
       "design",
       "websites"
     ],
-    "author": "Paul",
+    "author": "wallx7",
     "license": "MIT",
     "devDependencies": {
       "tailwindcss": "^3.4.1"

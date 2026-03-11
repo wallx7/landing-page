@@ -3,9 +3,8 @@ module.exports = {
 	prefix: 'tw-',
 	important: false,
 	content: [
-		"**/*.{html, jsx, js}",
-		"**/*.js",
-		"**/*.html",
+		"./**/*.{html,js}",
+		"!./node_modules/**",
 	],
 	theme: {
 		extend: {

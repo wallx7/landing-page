@@ -1,0 +1,13 @@
+node_modules/
+*.log
+npm-debug.log*
+yarn-error.log*
+.DS_Store
+.vscode/
+.idea/
+dist/
+build/
+coverage/
+.env
+.env.*
+landWEVEN/tailwind-runtime.css
